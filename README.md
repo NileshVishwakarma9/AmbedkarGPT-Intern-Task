@@ -1,53 +1,164 @@
-# AmbedkarGPT-Intern-Task
+# AmbedkarGPT – AI Intern Task (Kalpit Pvt Ltd)
 
-## Overview
-AmbedkarGPT is a command-line Q&A system that answers questions based on a short excerpt from Dr. B.R. Ambedkar's "Annihilation of Caste".
+This project is a simple **Command-Line RAG-based Question Answering System** built as part of the **AI Intern Assignment for Kalpit Pvt Ltd (UK)**.
 
-It uses **LangChain**, **ChromaDB**, **HuggingFace embeddings**, and **Ollama (Mistral 7B)**.
+It loads a speech by **Dr. B. R. Ambedkar**, splits it into chunks, creates embeddings, stores them locally using **ChromaDB**, and answers questions using the **Ollama LLM (Mistral / Llama3.2)** — fully offline and free.
 
 ---
 
-## Setup Instructions
+## 🚀 Features
 
-1. Clone the repository:
+- ⚡ Fully local RAG pipeline  
+- 📄 Loads and processes `speech.txt`  
+- ✂️ Splits text into meaningful chunks  
+- 🧠 Creates embeddings using `sentence-transformers/all-MiniLM-L6-v2`  
+- 💾 Stores vectors in **ChromaDB**  
+- 🔍 Retrieves relevant chunks  
+- 🤖 Uses **Ollama (Mistral / Llama3.2)** for answer generation  
+- 🖥️ Simple terminal-based Q&A interface  
+
+---
+
+## 📁 Project Structure
+
+```
+AmbedkarGPT-Intern-Task/
+│── main.py
+│── speech.txt
+│── requirements.txt
+│── README.md
+│── db/ (auto-created for Chroma)
+│── venv/ (optional)
+```
+
+---
+
+## 🛠️ Installation & Setup
+
+Follow these steps to run the project **on Windows, Mac, or Linux**.
+
+---
+
+### 1️⃣ Clone the repository
+
 ```bash
-git clone <repository_url>
+git clone https://github.com/NileshVishwakarma9/AmbedkarGPT-Intern-Task
 cd AmbedkarGPT-Intern-Task
 ```
 
-2. Set up a virtual environment:
+---
+
+### 2️⃣ Create and activate virtual environment
+
+#### **Windows**
 ```bash
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+venv\Scripts\activate
 ```
 
-3. Install dependencies:
+#### **Mac/Linux**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### 3️⃣ Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Install Ollama & pull Mistral 7B:
+---
+
+## 🔧 Install & Setup Ollama
+
+Download Ollama from:
+
+👉 https://ollama.com/download
+
+Then pull your model (Mistral 7B or Llama 3.2)
+
 ```bash
-curl -fsSL https://ollama.ai/install.sh | sh
 ollama pull mistral
+# OR
+ollama pull llama3.2
+```
+
+Ensure Ollama is running:
+
+```bash
+ollama --version
 ```
 
 ---
 
-## Usage
-Run the system:
+## ▶️ Running the Application
+
+Once everything is installed, run:
+
 ```bash
 python main.py
 ```
 
-Type your questions and AmbedkarGPT will answer based on the speech.  
-Type `exit`, `quit`, or `bye` to close the program.
+You should see:
+
+```
+Initializing...
+System ready! Ask questions.
+You:
+```
+
+Now you can start asking anything based on Ambedkar’s speech.
+
+Example:
+
+```
+You: What is the main problem according to Ambedkar?
+```
 
 ---
 
-## Files
-- `main.py` → Core Python code.
-- `speech.txt` → Text excerpt for the Q&A.
-- `requirements.txt` → Python dependencies.
-- `README.md` → Instructions and overview.
+## 📌 Requirements (As per assignment)
+
+- Python 3.8+
+- LangChain (RAG orchestration)
+- ChromaDB (vector store)
+- HuggingFace Embeddings (MiniLM)
+- Ollama (Mistral / Llama3.2)
+- Works 100% offline
+- No API keys needed
+
+---
+
+## 🧪 Example Queries
+
+```
+What does Ambedkar say about caste?
+Why does he criticize shastras?
+What is the root of the caste problem?
+```
+
+---
+
+## 📬 Assignment Confirmation
+
+This repository contains **all required deliverables**:
+
+✔ `main.py` – well-commented code  
+✔ `requirements.txt`  
+✔ `speech.txt` (provided text)  
+✔ `README.md` (setup + usage documentation)  
+✔ Public GitHub repository  
+
+---
+
+## 🙌 Author  
+**Nilesh Vishwakarma**  
+AI Intern Applicant – Kalpit Pvt Ltd  
+
+---
+
+## 📄 License  
+This project is for evaluation purposes only.
